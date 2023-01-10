@@ -32,12 +32,14 @@ func (c *AnnController) ListAnn() {
 	}
 
 	var subContentList []*models.AnnSubContent
-	o.QueryTable(&models.AnnSubContent{}).
-		Filter("ann_id__in", annIds).
-		Filter("start_time__lte", now).
-		Filter("end_time__gte", now).
-		OrderBy("ann_id", "order").
-		All(&subContentList)
+	if len(annIds) > 0 {
+		o.QueryTable(&models.AnnSubContent{}).
+			Filter("ann_id__in", annIds).
+			Filter("start_time__lte", now).
+			Filter("end_time__gte", now).
+			OrderBy("ann_id", "order").
+			All(&subContentList)
+	}
 
 	var annSubContent = map[int][]*models.AnnSubContent{}
 	for _, subContent := range subContentList {
@@ -47,6 +49,5 @@ func (c *AnnController) ListAnn() {
 	c.Data["anns"] = anns
 	c.Data["annSubContent"] = annSubContent
 
-	c.Data["content"] = "world"
 	c.TplName = "ann.tpl"
 }
