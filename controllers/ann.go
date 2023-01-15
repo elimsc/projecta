@@ -18,6 +18,20 @@ func (c *AnnController) ListAnn() {
 
 	o := orm.NewOrm()
 
+	var annTypes []*models.AnnType
+	o.QueryTable(&models.AnnType{}).OrderBy("-id").All(&annTypes)
+
+	var annTypesWidth = map[string]int{}
+	width := 100 / len(annTypes)
+	lastWidth := 100 - width*len(annTypes) + width // 100 - 33 * 3 + 33 = 34
+	for i, annType := range annTypes {
+		if i == len(annTypes)-1 {
+			annTypesWidth[annType.Identity] = lastWidth
+		} else {
+			annTypesWidth[annType.Identity] = width
+		}
+	}
+
 	var anns []*models.Ann
 	o.QueryTable(&models.Ann{}).
 		Filter("type", annTypeIdentity).
@@ -48,6 +62,9 @@ func (c *AnnController) ListAnn() {
 
 	c.Data["anns"] = anns
 	c.Data["annSubContent"] = annSubContent
+	c.Data["typeIdentity"] = annTypeIdentity
+	c.Data["annTypes"] = annTypes
+	c.Data["annTypesWidth"] = annTypesWidth
 
 	c.TplName = "ann.tpl"
 }
