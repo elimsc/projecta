@@ -136,7 +136,7 @@
                 {{if eq $annID $ann.ID}}
                     {{range $key1, $subContent := $subContentList}}
                         <p style="font-size: 21px; color: #c49c4e; border-left: #c49c4e 3px solid; padding-left: 7px;">{{$subContent.Title}}</p>
-                        <div  style="font-family: 'Microsoft Yahei'; color: #3f3f3f; font-size: 19px;">
+                        <div  style="font-family: 'Microsoft Yahei'; color: #3f3f3f; font-size: 19px;background-color: #8888884d;border-radius: 5px;padding: 1px 15px;">
                             {{$subContent.Content | htmlSafe}}
                         </div>
                     {{end}}
