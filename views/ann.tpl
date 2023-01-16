@@ -113,6 +113,7 @@
             text-decoration: none;
         }
         .ann_type.selected {
+            opacity: 70%;
             background-color: #7ce4dc;
             color: #000;
         }
@@ -122,7 +123,7 @@
     <div class="container">
         {{range $key, $ann := .anns }}
         <div id="ann-{{$ann.ID}}" class="tab-item" {{if ne $key 0}}style="display: none;"{{end}}>
-            <div style="position: sticky; top: 0; z-index: 999; background-color: #eee;">
+            <div style="position: sticky; top: 0; z-index: 999; background-image: url(/static/img/global_bg.png);background-size: cover;">
                 <img src={{$ann.Pic | url}} style="width: 100%;">
                 <div style="text-align: center; font-size: 22px;  width: 70%; margin: 0 auto; color: #71dfd8; padding: 6px 0;">
                     <span style="display:block; height: 30px; line-height: 30px;" class="ann_title">{{$ann.Title}}</p>
@@ -136,7 +137,7 @@
                 {{if eq $annID $ann.ID}}
                     {{range $key1, $subContent := $subContentList}}
                         <p style="font-size: 21px; color: #c49c4e; border-left: #c49c4e 3px solid; padding-left: 7px;">{{$subContent.Title}}</p>
-                        <div  style="font-family: 'Microsoft Yahei'; color: #3f3f3f; font-size: 19px;background-color: #8888884d;border-radius: 5px;padding: 1px 15px;">
+                        <div  style="font-family: 'Microsoft Yahei'; color: #3f3f3f; font-size: 19px;background-color: #0000004d;border-radius: 5px;padding: 1px 15px;">
                             {{$subContent.Content | htmlSafe}}
                         </div>
                     {{end}}
