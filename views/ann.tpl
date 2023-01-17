@@ -123,7 +123,7 @@
     <div class="container">
         {{range $key, $ann := .anns }}
         <div id="ann-{{$ann.ID}}" class="tab-item" {{if ne $key 0}}style="display: none;"{{end}}>
-            <div style="position: sticky; top: 0; z-index: 999; background-image: url(/static/img/global_bg.png);background-size: cover;">
+            <div style="position: sticky; top: 0; z-index: 999; background-image: url(/static/img/global_bg.png);background-size: 100% cover;">
                 <img src={{$ann.Pic | url}} style="width: 100%;">
                 <div style="text-align: center; font-size: 22px;  width: 70%; margin: 0 auto; color: #71dfd8; padding: 6px 0;">
                     <span style="display:block; height: 30px; line-height: 30px;" class="ann_title">{{$ann.Title}}</p>
