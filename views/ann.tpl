@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="/static/css/scrolltabs.css">
 
     <style>
+        
         @font-face {
             font-family: "SimHei";
             src: url(/static/font/simhei.ttf);
@@ -133,19 +134,19 @@
         <div id="ann-{{$ann.ID}}" class="tab-item" {{if ne $key 0}}style="display: none;"{{end}}>
             <div style="position: sticky; top: 0; z-index: 999; background-image: url(/static/img/global_bg.png);background-size: 100% cover;">
                 <img src={{$ann.Pic | url}} style="width: 100%;">
-                <div style="text-align: center; font-size: 22px;  width: 70%; margin: 0 auto; color: #71dfd8; padding: 6px 0;">
-                    <span style="display:block; height: 30px; line-height: 30px; font-family: 'HYLing'" class="ann_title">{{$ann.Title}}</p>
+                <div style="text-align: center; font-size: 3.4vw;  width: 70%; margin: 0 auto; color: #71dfd8; padding: 6px 0;">
+                    <span style="display:block; height: 1.5; line-height: 1.5; font-family: 'HYLing'" class="ann_title">{{$ann.Title}}</p>
                 </div>
             </div>
             <div style="padding: 0 20px;" >
-                <div style="font-family: 'SimHei'; color: #3f3f3f; font-size: 19px;">
+                <div style="font-family: 'SimHei'; color: #3f3f3f; font-size: 3vw;">
                     {{$ann.Content | htmlSafe}}
                 </div>
                 {{range $annID, $subContentList := $.annSubContent}}
                 {{if eq $annID $ann.ID}}
                     {{range $key1, $subContent := $subContentList}}
-                        <p style="font-size: 21px; color: #c49c4e; border-left: #c49c4e 3px solid; padding-left: 7px; font-family: 'HYLing';">{{$subContent.Title}}</p>
-                        <div  style="font-family: 'SimHei'; color: #3f3f3f; font-size: 19px;background-color: #9999994d;border-radius: 5px;padding: 1px 15px;">
+                        <p style="font-size: 3.3vw; color: #c49c4e; border-left: #c49c4e 3px solid; padding-left: 7px; font-family: 'HYLing';">{{$subContent.Title}}</p>
+                        <div  style="font-family: 'SimHei'; color: #3f3f3f; font-size: 3vw;background-color: #9999994d;border-radius: 5px;padding: 1px 15px;">
                             {{$subContent.Content | htmlSafe}}
                         </div>
                     {{end}}
