@@ -10,6 +10,14 @@
     <link rel="stylesheet" href="/static/css/scrolltabs.css">
 
     <style>
+        @font-face {
+            font-family: "SimHei";
+            src: url(/static/font/simhei.ttf);
+        }
+        @font-face {
+            font-family: "HYLing";
+            src: url(/static/font/HYLingXinClassic75W.ttf);
+        }
         html {
             height: 100%;
         }
@@ -126,18 +134,18 @@
             <div style="position: sticky; top: 0; z-index: 999; background-image: url(/static/img/global_bg.png);background-size: 100% cover;">
                 <img src={{$ann.Pic | url}} style="width: 100%;">
                 <div style="text-align: center; font-size: 22px;  width: 70%; margin: 0 auto; color: #71dfd8; padding: 6px 0;">
-                    <span style="display:block; height: 30px; line-height: 30px;" class="ann_title">{{$ann.Title}}</p>
+                    <span style="display:block; height: 30px; line-height: 30px; font-family: 'HYLing'" class="ann_title">{{$ann.Title}}</p>
                 </div>
             </div>
             <div style="padding: 0 20px;" >
-                <div style="font-family: 'Microsoft Yahei'; color: #3f3f3f; font-size: 19px;">
+                <div style="font-family: 'SimHei'; color: #3f3f3f; font-size: 19px;">
                     {{$ann.Content | htmlSafe}}
                 </div>
                 {{range $annID, $subContentList := $.annSubContent}}
                 {{if eq $annID $ann.ID}}
                     {{range $key1, $subContent := $subContentList}}
-                        <p style="font-size: 21px; color: #c49c4e; border-left: #c49c4e 3px solid; padding-left: 7px;">{{$subContent.Title}}</p>
-                        <div  style="font-family: 'Microsoft Yahei'; color: #3f3f3f; font-size: 19px;background-color: #0000004d;border-radius: 5px;padding: 1px 15px;">
+                        <p style="font-size: 21px; color: #c49c4e; border-left: #c49c4e 3px solid; padding-left: 7px; font-family: 'HYLing';">{{$subContent.Title}}</p>
+                        <div  style="font-family: 'SimHei'; color: #3f3f3f; font-size: 19px;background-color: #9999994d;border-radius: 5px;padding: 1px 15px;">
                             {{$subContent.Content | htmlSafe}}
                         </div>
                     {{end}}
@@ -151,12 +159,12 @@
             
 
         <div style="position: fixed; height: 80px; width: 100%; bottom: 0; z-index: 999; background-color: #eee;">
-            <div id="tabSet" class="scroll_tabs_theme_light footer"  style="width: 80%;">
+            <div id="tabSet" class="scroll_tabs_theme_light footer"  style="width: 80%;font-family: 'HYLing';">
                 {{range $key, $ann := .anns }}
                 <span rel="ann-{{$ann.ID}}" {{if eq $key 0}}class="tab_selected"{{end}}>{{$ann.Label}}</span>
                 {{end}}
             </div>
-            <div style="font-family: 'Microsoft Yahei';font-size: 20px;display: flex;">
+            <div style="font-family: 'HYLing';font-size: 20px;display: flex;">
                 {{range $key, $annType := .annTypes }}
                 <a class="ann_type {{if eq $annType.Identity $.typeIdentity}}selected{{end}}" style='width: {{map_get $.annTypesWidth $annType.Identity}}%;' href="/ann/listann?identity={{$annType.Identity}}">{{$annType.Name}}</a>
                 {{end}}
