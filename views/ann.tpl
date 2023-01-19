@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>公告</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css" integrity="sha384-X38yfunGUhNzHpBaEBsWLO+A0HDYOQi8ufWDkZ0k9e0eXz/tH3II7uKZ9msv++Ls" crossorigin="anonymous">
 
     <link rel="stylesheet" href="/static/css/scrolltabs.css">
@@ -32,7 +32,7 @@
         .container {
             position: relative;
             min-height: 100%;
-            padding-bottom: 80px;
+            padding-bottom: 20vw;
         }
         body{
             background-color: #eee;
@@ -49,8 +49,8 @@
       
         .footer {
             border: none;
-            height: 30px;
-            margin: 10px auto;
+            height: 6vw;
+            margin: 3vw auto;
             background-image: url(/static/img/yeqian_bg.png);
             background-repeat:no-repeat; 
             background-position: center center;
@@ -58,15 +58,15 @@
             color: #646666;
         }
         .scroll_tabs_theme_light div.scroll_tab_inner span, .scroll_tabs_theme_light div.scroll_tab_inner li {
-            line-height: 30px;
+            line-height: 6vw;
         }
         .scroll_tabs_theme_light div.scroll_tab_inner span, .scroll_tabs_theme_light div.scroll_tab_inner li {
             border: 0px;
         }
         .scroll_tabs_theme_light div.scroll_tab_inner span.tab_selected, .footer .scroll_tabs_theme_light div.scroll_tab_inner li.tab_selected {
-            border: 14px solid;
-            padding: 0 6px; /* 15 + 5  =20 */
-            border-image: url(/static/img/yeqian_select.png) 0 14 0 14 fill repeat stretch;
+            border: 17px solid;
+            padding: 0 3px; /* 15 + 5  =20 */
+            border-image: url(/static/img/yeqian_select.png) 0 18 0 18 fill repeat round;
             border-image-outset:3px 5px 3px 5px;
             border-top: 0px;
             border-bottom: 0px;
@@ -107,18 +107,18 @@
         }
 
         .scroll_tabs_theme_light div.scroll_tab_inner span, .scroll_tabs_theme_light div.scroll_tab_inner li {
-            font-size: 19px;
+            font-size: 3.59vw;
         }
         .scroll_tabs_container div.scroll_tab_inner span, .scroll_tabs_container div.scroll_tab_inner li {
-            font-size: 19px;
+            font-size: 3.59vw;
         }
         .ann_type {
             display: inline-block;
             background-color: #5e5e5e;
             color: #71dfd8;
             text-align: center;
-            height: 30px;
-            line-height: 30px;
+            height: 8vw;
+            line-height: 8vw;
             text-decoration: none;
         }
         .ann_type.selected {
@@ -132,21 +132,21 @@
     <div class="container">
         {{range $key, $ann := .anns }}
         <div id="ann-{{$ann.ID}}" class="tab-item" {{if ne $key 0}}style="display: none;"{{end}}>
-            <div style="position: sticky; top: 0; z-index: 999; background-image: url(/static/img/global_bg.png);background-size: 100% cover;">
+            <div style="position: sticky; top: 0; z-index: 999; background-image: url(/static/img/global_bg.png);background-size: 100vw 100vh;">
                 <img src={{$ann.Pic | url}} style="width: 100%;">
-                <div style="text-align: center; font-size: 3.4vw;  width: 70%; margin: 0 auto; color: #71dfd8; padding: 6px 0;">
-                    <span style="display:block; height: 1.5; line-height: 1.5; font-family: 'HYLing'" class="ann_title">{{$ann.Title}}</p>
+                <div style="text-align: center; font-size: 4.15vw;  width: 70%; margin: 0 auto; color: #71dfd8; padding: 2vw 0;">
+                    <span style="display:block; line-height: 7.2vw; height: 7.2vw; font-family: 'HYLing'" class="ann_title">{{$ann.Title}}</p>
                 </div>
             </div>
-            <div style="padding: 0 20px;" >
-                <div style="font-family: 'SimHei'; color: #3f3f3f; font-size: 3vw;">
+            <div style="padding: 0 3.5vw;" >
+                <div style="font-family: 'SimHei'; color: #3f3f3f; font-size: 3.59vw;">
                     {{$ann.Content | htmlSafe}}
                 </div>
                 {{range $annID, $subContentList := $.annSubContent}}
                 {{if eq $annID $ann.ID}}
                     {{range $key1, $subContent := $subContentList}}
-                        <p style="font-size: 3.3vw; color: #c49c4e; border-left: #c49c4e 3px solid; padding-left: 7px; font-family: 'HYLing';">{{$subContent.Title}}</p>
-                        <div  style="font-family: 'SimHei'; color: #3f3f3f; font-size: 3vw;background-color: #9999994d;border-radius: 5px;padding: 1px 15px;">
+                        <p style="font-size: 3.96vw; color: #c49c4e; border-left: #c49c4e 3px solid; padding-left: 7px; font-family: 'HYLing';">{{$subContent.Title}}</p>
+                        <div  style="font-family: 'SimHei'; color: #3f3f3f; font-size: 3.59vw;background-color: #9999994d;border-radius: 5px;padding: 1px 2.5vw;">
                             {{$subContent.Content | htmlSafe}}
                         </div>
                     {{end}}
@@ -159,13 +159,13 @@
         {{end}}
             
 
-        <div style="position: fixed; height: 80px; width: 100%; bottom: 0; z-index: 999; background-color: #eee;">
-            <div id="tabSet" class="scroll_tabs_theme_light footer"  style="width: 80%;font-family: 'HYLing';">
+        <div style="position: fixed; height: 20vw; width: 100%; bottom: 0; z-index: 999; background-color: #eee;">
+            <div id="tabSet" class="scroll_tabs_theme_light footer"  style="width: 85%;font-family: 'HYLing';">
                 {{range $key, $ann := .anns }}
                 <span rel="ann-{{$ann.ID}}" {{if eq $key 0}}class="tab_selected"{{end}}>{{$ann.Label}}</span>
                 {{end}}
             </div>
-            <div style="font-family: 'HYLing';font-size: 20px;display: flex;">
+            <div style="font-family: 'HYLing';font-size: 3.78vw;display: flex;">
                 {{range $key, $annType := .annTypes }}
                 <a class="ann_type {{if eq $annType.Identity $.typeIdentity}}selected{{end}}" style='width: {{map_get $.annTypesWidth $annType.Identity}}%;' href="/ann/listann?identity={{$annType.Identity}}">{{$annType.Name}}</a>
                 {{end}}
