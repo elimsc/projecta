@@ -32,7 +32,10 @@
         .container {
             position: relative;
             min-height: 100%;
-            padding-bottom: 20vw;
+            padding-bottom: 20.6vw;
+        }
+        .container p {
+            margin: 0;
         }
         body{
             background-color: #eee;
@@ -49,16 +52,19 @@
       
         .footer {
             border: none;
-            height: 6vw;
-            margin: 3vw auto;
+            height: 7vw;
+            margin: 2.27vw auto 3.03vw;
             background-image: url(/static/img/yeqian_bg.png);
             background-repeat:no-repeat; 
             background-position: center center;
             background-size: 100% 100%;
             color: #646666;
         }
+        .scroll_tabs_theme_light div.scroll_tab_inner {
+            height: 7vw;
+        }
         .scroll_tabs_theme_light div.scroll_tab_inner span, .scroll_tabs_theme_light div.scroll_tab_inner li {
-            line-height: 6vw;
+            line-height: 7vw;
         }
         .scroll_tabs_theme_light div.scroll_tab_inner span, .scroll_tabs_theme_light div.scroll_tab_inner li {
             border: 0px;
@@ -115,14 +121,13 @@
         .ann_type {
             display: inline-block;
             background-color: #5e5e5e;
-            color: #71dfd8;
+            color: rgba(113, 223, 217, 0.7);
             text-align: center;
-            height: 8vw;
-            line-height: 8vw;
+            height: 8.3vw;
+            line-height: 8.3vw;
             text-decoration: none;
         }
         .ann_type.selected {
-            opacity: 70%;
             background-color: #7ce4dc;
             color: #000;
         }
@@ -133,20 +138,20 @@
         {{range $key, $ann := .anns }}
         <div id="ann-{{$ann.ID}}" class="tab-item" {{if ne $key 0}}style="display: none;"{{end}}>
             <div style="position: sticky; top: 0; z-index: 999; background-image: url(/static/img/global_bg.png);background-size: 100vw 100vh;">
-                <img src={{$ann.Pic | url}} style="width: 100%;">
+                <img src={{$ann.Pic | url}} style="display:block;margin: 1.89vw auto 0; width: 94%;">
                 <div style="text-align: center; font-size: 4.15vw;  width: 70%; margin: 0 auto; color: #71dfd8; padding: 2vw 0;">
                     <span style="display:block; line-height: 7.2vw; height: 7.2vw; font-family: 'HYLing'" class="ann_title">{{$ann.Title}}</p>
                 </div>
             </div>
-            <div style="padding: 0 3.5vw;" >
-                <div style="font-family: 'SimHei'; color: #3f3f3f; font-size: 3.59vw;">
+            <div style="padding: 0 3.77vw;" >
+                <div style="font-family: 'SimHei'; color: #3f3f3f; font-size: 3.59vw; line-height: 5.66vw">
                     {{$ann.Content | htmlSafe}}
                 </div>
                 {{range $annID, $subContentList := $.annSubContent}}
                 {{if eq $annID $ann.ID}}
                     {{range $key1, $subContent := $subContentList}}
-                        <p style="font-size: 3.96vw; color: #c49c4e; border-left: #c49c4e 3px solid; padding-left: 7px; font-family: 'HYLing';">{{$subContent.Title}}</p>
-                        <div  style="font-family: 'SimHei'; color: #3f3f3f; font-size: 3.59vw;background-color: #9999994d;border-radius: 1vw;padding: 1px 2.5vw;">
+                        <p style="font-size: 3.96vw; color: #c49c4e; border-left: #c49c4e 0.76vw solid; padding-left: 1.32vw; font-family: 'HYLing'; margin: 3.77vw 0 1.89vw 0">{{$subContent.Title}}</p>
+                        <div  style="padding: 0; line-height: 4.9vw; font-family: 'SimHei'; color: #3f3f3f; font-size: 3.59vw;background-color: #9999994d;border-radius: 1vw;padding: 2vw;">
                             {{$subContent.Content | htmlSafe}}
                         </div>
                     {{end}}
