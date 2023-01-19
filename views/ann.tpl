@@ -151,7 +151,7 @@
                 {{if eq $annID $ann.ID}}
                     {{range $key1, $subContent := $subContentList}}
                         <p style="font-size: 3.96vw; color: #c49c4e; font-family: 'HYLing'; margin: 3.77vw 0 1.89vw 0">
-                            <img src="/static/img/subtitle_start.png" style="width: 0.76vw; height: 3.25vw; line-height: 4.55vw;">
+                            <img src="/static/img/subtitle_start.png" style="width: 0.76vw; height: 3.25vw; line-height: 3.96vw;">
                             {{$subContent.Title}}
                         </p>
                         <div  style="padding: 0; line-height: 4.9vw; font-family: 'SimHei'; color: #3f3f3f; font-size: 3.59vw;background-color: #9999994d;border-radius: 1vw;padding: 2vw;">
