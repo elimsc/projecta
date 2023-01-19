@@ -139,7 +139,7 @@
         <div id="ann-{{$ann.ID}}" class="tab-item" {{if ne $key 0}}style="display: none;"{{end}}>
             <div style="position: sticky; top: 0; z-index: 999; background-image: url(/static/img/global_bg.png);background-size: 100vw 100vh;">
                 <img src={{$ann.Pic | url}} style="display:block;margin: 1.89vw auto 0; width: 94%;">
-                <div style="text-align: center; font-size: 4.15vw;  width: 70%; margin: 0 auto; color: #71dfd8; padding: 2vw 0;">
+                <div style="text-align: center; font-size: 4.15vw;  width: 70%; margin: 0 auto; color: #71dfd8; padding: 3.21vw 0;">
                     <span style="display:block; line-height: 7.2vw; height: 7.2vw; font-family: 'HYLing'" class="ann_title">{{$ann.Title}}</p>
                 </div>
             </div>
