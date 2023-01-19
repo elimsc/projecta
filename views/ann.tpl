@@ -66,8 +66,8 @@
         .scroll_tabs_theme_light div.scroll_tab_inner span.tab_selected, .footer .scroll_tabs_theme_light div.scroll_tab_inner li.tab_selected {
             border: 17px solid;
             padding: 0 3px; /* 15 + 5  =20 */
-            border-image: url(/static/img/yeqian_select.png) 0 18 0 18 fill repeat round;
-            border-image-outset:3px 5px 3px 5px;
+            border-image: url(/static/img/yeqian_select.png) 0 17 0 17 fill repeat stretch;
+            border-image-outset:0.55vw 0.94vw 0.55vw 0.94vw;
             border-top: 0px;
             border-bottom: 0px;
             color: #7e622c;
@@ -146,7 +146,7 @@
                 {{if eq $annID $ann.ID}}
                     {{range $key1, $subContent := $subContentList}}
                         <p style="font-size: 3.96vw; color: #c49c4e; border-left: #c49c4e 3px solid; padding-left: 7px; font-family: 'HYLing';">{{$subContent.Title}}</p>
-                        <div  style="font-family: 'SimHei'; color: #3f3f3f; font-size: 3.59vw;background-color: #9999994d;border-radius: 5px;padding: 1px 2.5vw;">
+                        <div  style="font-family: 'SimHei'; color: #3f3f3f; font-size: 3.59vw;background-color: #9999994d;border-radius: 1vw;padding: 1px 2.5vw;">
                             {{$subContent.Content | htmlSafe}}
                         </div>
                     {{end}}
