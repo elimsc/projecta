@@ -33,7 +33,7 @@
             position: relative;
             min-height: 100%;
             /* padding-bottom: 20.6vw; */
-            padding-bottom: 1vw;
+            padding-bottom: 12.3vw;
         }
         .container p {
             margin: 0;
@@ -168,18 +168,18 @@
         {{end}}
             
 
-        <!-- <div style="position: fixed; height: 20vw; width: 100%; bottom: 0; z-index: 999; background-color: #eee;">
+        <div style="position: fixed; height: 12.3vw; width: 100%; bottom: 0; z-index: 999; background-color: #eee;">
             <div id="tabSet" class="scroll_tabs_theme_light footer"  style="width: 85%;font-family: 'HYLing';">
                 {{range $key, $ann := .anns }}
                 <span rel="ann-{{$ann.ID}}" {{if eq $key 0}}class="tab_selected"{{end}}>{{$ann.Label}}</span>
                 {{end}}
             </div>
-            <div style="font-family: 'HYLing';font-size: 3.78vw;display: flex;">
+            <!-- <div style="font-family: 'HYLing';font-size: 3.78vw;display: flex;">
                 {{range $key, $annType := .annTypes }}
                 <a class="ann_type {{if eq $annType.Identity $.typeIdentity}}selected{{end}}" style='width: {{map_get $.annTypesWidth $annType.Identity}}%;' href="/ann/listann?identity={{$annType.Identity}}">{{$annType.Name}}</a>
                 {{end}}
-            </div>
-        </div> -->
+            </div> -->
+        </div>
 
     </div>
 
