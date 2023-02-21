@@ -32,7 +32,8 @@
         .container {
             position: relative;
             min-height: 100%;
-            padding-bottom: 20.6vw;
+            /* padding-bottom: 20.6vw; */
+            padding-bottom: 1vw;
         }
         .container p {
             margin: 0;
