@@ -63,7 +63,43 @@
         }
         .scroll_tabs_theme_light div.scroll_tab_inner {
             height: 7vw;
+            -webkit-overflow-scrolling: touch;
+            overflow-x: scroll !important;
+            cursor: pointer;
         }
+        div.scroll_tab_inner {
+            scrollbar-width: none; /* For Firefox */
+            -ms-overflow-style: none; /* For Internet Explorer and Edge */
+        }
+
+        div.scroll_tab_inner::-webkit-scrollbar {
+            width: 0px; /* For Chrome, Safari, and Opera */
+            height: 0px;;
+            display: none;
+        }
+        #tabSet span:nth-child(2) {
+            margin-right: -1.5vw;
+            margin-left: 0;
+        }
+        #tabSet span:nth-last-child(2) {
+            margin-left: -1.5vw;
+            margin-right: 0;
+        }
+        #tabSet span{
+            margin-left: -0.7vw;
+            margin-right: -0.7vw;
+        }
+       
+
+        .scroll_tabs_theme_light div.scroll_tab_inner span,
+        .scroll_tabs_container div.scroll_tab_inner span {
+            padding-left: 17px;
+            padding-right: 17px;
+        }
+        
+      
+      
+
         .scroll_tabs_theme_light div.scroll_tab_inner span, .scroll_tabs_theme_light div.scroll_tab_inner li {
             line-height: 7vw;
         }
@@ -72,9 +108,10 @@
         }
         .scroll_tabs_theme_light div.scroll_tab_inner span.tab_selected, .footer .scroll_tabs_theme_light div.scroll_tab_inner li.tab_selected {
             border: 17px solid;
-            padding: 0 3px; /* 15 + 5  =20 */
+            padding: 0 0px; 
             border-image: url(/static/img/yeqian_select.png) 0 17 0 17 fill repeat stretch;
             border-image-outset:0.55vw 0.94vw 0.55vw 0.94vw;
+            /* border-image-outset:0.55vw 0.3vw 0.55vw 0.3vw; */
             border-top: 0px;
             border-bottom: 0px;
             color: #7e622c;
@@ -139,7 +176,7 @@
         {{range $key, $ann := .anns }}
         <div id="ann-{{$ann.ID}}" class="tab-item" {{if ne $key 0}}style="display: none;"{{end}}>
             <div style="position: sticky; top: 0; z-index: 999; background-image: url(/static/img/global_bg.png);background-size: 100vw 100vh;">
-                <img src={{$ann.Pic | url}} style="display:block;margin: 1.89vw auto 0; width: 94%;">
+                {{if ne $ann.Pic ""}}<img src={{$ann.Pic | url}} style="display:block;margin: 0 auto; padding-top: 1.89vw; width: 94%;">{{end}}
                 <div style="text-align: center; font-size: 4.15vw;  width: 70%; margin: 0 auto; color: #71dfd8; padding: 3.21vw 0;">
                     <span style="display:block; line-height: 7.2vw; height: 7.2vw; font-family: 'HYLing'" class="ann_title">{{$ann.Title}}</p>
                 </div>
@@ -206,6 +243,7 @@
             }
         });
     </script>
+
 </body>
 </html>
 
