@@ -29,6 +29,9 @@
             background-position: center center;
             background-size: 100% 100%;
         }
+        a, a:hover, a:visited, a:link, a:active , a:focus, div.scroll_tab_inner {
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0); /*解决手机版点击背景问题*/
+        }
         .container {
             position: relative;
             min-height: 100%;
