@@ -63,12 +63,15 @@
             background-position: center center;
             background-size: 100% 100%;
             color: #646666;
+            border-radius: 3.2vw 0 3.2vw 0;
+            overflow: hidden;
         }
         .scroll_tabs_theme_light div.scroll_tab_inner {
             height: 7vw;
             -webkit-overflow-scrolling: touch;
             overflow-x: scroll !important;
             cursor: pointer;
+            /* margin: 0 0 0 0.7vw !important; */
         }
         div.scroll_tab_inner {
             scrollbar-width: none; /* For Firefox */
@@ -99,8 +102,6 @@
             padding-left: 17px;
             padding-right: 17px;
         }
-        
-      
       
 
         .scroll_tabs_theme_light div.scroll_tab_inner span, .scroll_tabs_theme_light div.scroll_tab_inner li {
