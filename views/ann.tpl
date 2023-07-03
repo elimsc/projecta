@@ -63,7 +63,7 @@
             background-position: center center;
             background-size: 100% 100%;
             color: #646666;
-            border-radius: 3.2vw 0 3.2vw 0;
+            border-radius: 4vw 0 4vw 0;
             overflow: hidden;
         }
         .scroll_tabs_theme_light div.scroll_tab_inner {
