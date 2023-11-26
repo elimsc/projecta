@@ -5,12 +5,14 @@ import (
 	_ "projecta/routers"
 
 	"github.com/beego/beego/v2/client/orm"
+	"github.com/beego/beego/v2/core/config"
 	beego "github.com/beego/beego/v2/server/web"
 	_ "github.com/go-sql-driver/mysql"
 )
 
 func init() {
-	orm.RegisterDataBase("default", "mysql", "root:@tcp(127.0.0.1:3306)/gm?charset=utf8")
+	dsn, _ := config.String("dsn")
+	orm.RegisterDataBase("default", "mysql", dsn)
 }
 
 func htmlSafe(html string) template.HTML {
