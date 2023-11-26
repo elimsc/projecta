@@ -210,7 +210,7 @@
             
 
         <div style="position: fixed; height: 12.3vw; width: 100%; bottom: 0; z-index: 999; background-color: #eee;">
-            <div id="tabSet" class="scroll_tabs_theme_light footer"  style="width: 85%;font-family: 'HYLing';">
+            <div id="tabSet" class="scroll_tabs_theme_light footer"  style="width: 55%;font-family: 'HYLing';">
                 {{range $key, $ann := .anns }}
                 <span rel="ann-{{$ann.ID}}" {{if eq $key 0}}class="tab_selected"{{end}}>{{$ann.Label}}</span>
                 {{end}}
